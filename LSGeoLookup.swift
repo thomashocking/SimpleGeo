@@ -143,7 +143,7 @@ class LSGeoLookup: NSObject, URLSessionDelegate{
     }
     
     func cancel(){
-        let lockQueue = DispatchQueue(label: "com.example.LockQueue")
+        let lockQueue = DispatchQueue(label: "com.lion.LockQueue")
         lockQueue.sync() {
             print("canceled")
             self.dataConnection?.invalidateAndCancel()
