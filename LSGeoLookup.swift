@@ -125,7 +125,7 @@ class LSGeoLookup: NSObject, URLSessionDelegate{
         }
         
         let urlString = String(format: nearbyToponymsURL, latitude, longitude, maxRows, radius ,self.userID!, langCode)
-        
+        //not proper keyname, see constants
         self.sendRequestWithURLString(urlString: urlString, keyname: "geonames")
     }
     
@@ -139,6 +139,7 @@ class LSGeoLookup: NSObject, URLSessionDelegate{
         let escQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
         
         let urlString = String(format: searchURL, escQuery!, mRows, startRow, "en", self.userID!)
+         //might be able to change keyname here too
         self.sendRequestWithURLString(urlString: urlString, keyname: "geonames")
     }
     
